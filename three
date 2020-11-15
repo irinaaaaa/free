@@ -1,0 +1,21 @@
+def temp(syr):
+    syr=syr.replace('/','').split()
+    m=list(syr)
+    a=0
+    for i in range(len(m)):
+        for j in m[i]:
+            if (int(m[i])<12000) and (int(m[i])>9999):
+                a=int(m[i])
+                break
+                i+=1 
+        if a>0:
+                break           
+    c=a/10
+    if (c//1>=1000) and (c//1<=1090):   
+        d=c-1000
+        d=round(d,1)
+        return f'{d} °'
+    else:
+        h=c-1100
+        h=round(h,1)
+        return f'-{h} °'
